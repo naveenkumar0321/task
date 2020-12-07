@@ -1,0 +1,246 @@
+<form  #myform = "ngForm"> 
+  
+<div class="row">
+  <div class="col col-4">
+
+  <div class="card">
+   
+    <div class="card-body">
+      <h5 class="card-title">PATIENT DETAILS</h5>
+      
+        
+            <div class="input-group mb-3">
+              <label>Name </label> &nbsp; &nbsp;
+                <input [(ngModel)]="user.name" type="text" name="name"  #name="ngModel" class="form-control">
+            </div>
+            <div class="input-group mb-3">
+              <label for="birthday">DOB:</label>
+            <input type="date" [(ngModel)]="user.dob" #dob="ngModel" name="dob">
+            
+            <label>age:</label>
+            <input  type="text" [(ngModel)]="user.age" #age="ngModel" name="age" class="form-control" >
+          
+            <div class="span3">
+              <label>Gender</label>
+              <select [(ngModel)]="user.gender" #gender = "ngModel" name="gender" class="span3">
+                  <option value="">Male</option>
+                  <option value="">Female</option>
+              </select>
+          </div>
+          </div>
+          <div class="input-group mb-3"> 
+            <label>Ins Type:</label>
+            <input [(ngModel)]="user.instype" #instype="ngModel" name="instype" type="text"  class="form-control" >
+
+            <label>Group:</label>
+            <input  [(ngModel)]="user.group" #group="ngModel" name="group"  type="text"  class="form-control" >
+
+            <label>Rel:</label>
+            <input  type="text"  [(ngModel)]="user.rel" #rel="ngModel" name="rel"   class="form-control" >
+          </div>
+
+          <div class="input-group mb-3">
+            <label>Person Code:</label>
+            <input  type="text"  [(ngModel)]="user.personcode" #personcode="ngModel" name="personcode"   class="form-control" >
+          
+            <label>Address:</label>
+            <input  type="text"  [(ngModel)]="user.address" #address="ngModel" name="address"  class="form-control" >
+          </div>
+    </div>
+  </div>
+  <div class="card p-3">
+    <h5 class="card-title">PRESCRIBER DETAILS</h5>
+    <div class="input-group mb-3">
+      <label>Name </label> &nbsp; &nbsp;
+        <input  type="text" [(ngModel)]="user.nme" #nme="ngModel"  name="nme" class="form-control">
+    </div>
+    <div class="input-group mb-3">
+      <label>Licence:</label>
+            <input  type="text" [(ngModel)]="user.licence" #licence="ngModel" name="licence" class="form-control" >
+          
+            <label>Phone:</label>
+            <input  type="text" [(ngModel)]="user.phone" #phone="ngModel" name="phone" class="form-control" >
+    </div>
+    <div class="input-group mb-3">
+      <label>NPL:</label>
+            <input  type="text"  class="form-control" [(ngModel)]="user.npl" #npl="ngModel" name="npl">
+          
+            <label>DEA:</label>
+            <input [(ngModel)]="user.dea" #dea="ngModel" name="dea" type="text"  class="form-control" >
+    </div>
+    <div class="input-group mb-3">
+      <label> Address </label> &nbsp; &nbsp;
+      <input  type="text" [(ngModel)]="user.add" #add="ngModel" name="add" class="form-control" >
+    </div>
+  </div>
+
+  <div class="card p-3">
+    <h5 class="card-title">DRUG DETAILS</h5>
+    <div class="input-group mb-3">
+      <label>Name </label> &nbsp; &nbsp;
+        <input  type="text" [(ngModel)]="user.nm" #nm="ngModel" name="nm" class="form-control">
+    </div>
+    <div class="input-group mb-3">
+      <label>NDC:</label>
+            <input  type="text" [(ngModel)]="user.ndc" #ndc="ngModel" name="ndc" class="form-control" >
+          
+            <label>Form:</label>
+            <input  type="text" [(ngModel)]="user.form" #form="ngModel" name="form" class="form-control" >
+
+            <label>Brand:</label>
+            <input  type="text" [(ngModel)]="user.brand" #brand="ngModel" name="brand" class="form-control" >
+    </div>
+    <div class="input-group mb-3">
+      <label>AWP:</label>
+            <input  type="text"  class="form-control" [(ngModel)]="user.awp" #awp="ngModel" name="awp" >
+          
+            <label>Cost:</label>
+            <input  type="text"  class="form-control" [(ngModel)]="user.cost" #cost="ngModel" name="cost" >
+
+            <label>Pr.Up:</label>
+            <input  type="text"  class="form-control" [(ngModel)]="user.prup" #prup="ngModel" name="prup"  >
+    </div>
+    <div class="input-group mb-3">
+      <label>Size:</label>
+            <input  type="text"  class="form-control" [(ngModel)]="user.size" #size="ngModel" name="size" >
+          
+            <label>Q.cd:</label>
+            <input  type="text"  class="form-control" [(ngModel)]="user.qcd" #qcd="ngModel" name="qcd" >
+
+            <label>Rx.Cost:</label>
+            <input  type="text"  class="form-control" [(ngModel)]="user.rxcost" #rxcost="ngModel" name="rxcost"  >
+    </div>
+  </div>
+
+  </div>
+
+
+
+
+
+<div class="col col-8">
+  <div class="card">
+    <div class="card-body">
+      <div class="list-inline">
+      <h5 class="card-title list-inline-item">Rx DETAILS</h5> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+          <input class="form-check-input list-inline-item" type="checkbox" [(ngModel)]="user.priority" #priority="ngModel" name="priority" >
+          <label class="form-check-label list-inline-item" for="gridCheck">
+            Priority
+          </label>&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <label>Ordered Date:</label>
+            <input type="date" [(ngModel)]="user.ordereddate" #ordereddate="ngModel" name="ordereddate" >&nbsp;&nbsp;&nbsp;
+          
+            <label>Refil qty:</label>
+            <input  type="text" [(ngModel)]="user.rflqty" #rflqty="ngModel" name="rflqty" >
+        </div>
+      
+    </div>
+    <div class="card-footer text-muted">
+      Refills({{rflqty.value}})
+    </div>
+
+    
+    </div>
+
+    <div class="card p-3">
+      <div class="input-group mb-3">
+        <label>Bill To:</label>
+              <input  type="text"  class="form-control" [(ngModel)]="user.billto" #billto="ngModel" name="billto"  >
+            
+              <label>IOU:</label>
+              <input  type="text"  class="form-control" [(ngModel)]="user.iou" #iou="ngModel" name="iou" >
+              
+              <label>Days Supply:</label>
+              <input  type="text"  class="form-control" [(ngModel)]="user.dayssupply" #dayssupply="ngModel" name="dayssupply"  >
+      </div>
+      <div class="input-group mb-3">
+        <label >Fill Date:</label>
+        <input type="date"  [(ngModel)]="user.filldate" #filldate="ngModel" name="filldate" >
+            
+              <label>Fill No:</label>
+              <input  type="text"  class="form-control" [(ngModel)]="user.fillno" #fillno="ngModel" name="fillno"  >
+
+              <label>Delivery:</label>
+              <input  type="text"  class="form-control" [(ngModel)]="user.delivery" #delivery="ngModel" name="delivery" >
+      </div>
+      <div class="input-group mb-3">
+        <label>Rx Type:</label>
+              <input  type="text"  class="form-control" [(ngModel)]="user.rxtype" #rxtype="ngModel" name="rxtype" >
+
+              <label>DAW:</label>
+              <input  type="text"  class="form-control" [(ngModel)]="user.daw" #daw="ngModel" name="daw" >
+
+              
+              <label>UOM:</label>
+              <input  type="text"  class="form-control" [(ngModel)]="user.uom" #uom="ngModel" name="uom" >
+      </div>
+      <div class="input-group mb-3">
+        <label>SIG:</label>
+              <input  type="text"  class="form-control" [(ngModel)]="user.sig" #sig="ngModel" name="sig"  >
+
+              <label>Qty Disp:</label>
+              <input  type="text"  class="form-control" [(ngModel)]="user.qtydisp" #qtydisp="ngModel" name="qtydisp"  >
+
+              
+              <label>Qty:</label>
+              <input  type="text"  class="form-control" [(ngModel)]="user.qty" #qty="ngModel" name="qty"  >
+      </div>
+      <div class="input-group mb-3">
+        <label>SIG Descr:</label>
+              <input  type="text" class="form-control" [(ngModel)]="user.sigdescr" #sigdescr="ngModel" name="sigdescr"  >
+      </div>
+      <div class="input-group mb-3">
+        <label>Note:</label>
+              <input  type="text" class="form-control" [(ngModel)]="user.note" #note="ngModel" name="note"  >
+      </div>
+
+      <div class="card p-3">
+        <div class="input-group mb-3">
+          <label>AWP:</label>
+                <input  type="text"  class="form-control" [(ngModel)]="user.awp" #awp="ngModel" name="awp" >
+              
+                <label>Unit Cost:</label>
+                <input  type="text"  class="form-control" [(ngModel)]="user.unitcost" #unitcost="ngModel" name="unitcost" >      
+        </div>
+        <div class="input-group mb-3">
+          <label>AWP price:</label>
+                <input  type="text"  class="form-control " [(ngModel)]="user.awpprice" #awpprice="ngModel" name="awpprice"  >
+              
+                <label>Acq price:</label>
+                <input  type="text"  class="form-control" [(ngModel)]="user.acqprice" #acqprice="ngModel" name="acqprice"  >  
+        </div>
+        <div class="input-group mb-3">
+          <label> Price:</label>
+                <input  type="text"  class="form-control w-4" [(ngModel)]="user.price" #price="ngModel" name="price" >
+              
+                <label>Cash Price:</label>
+                <input  type="text"  class="form-control" [(ngModel)]="user.cashprice" #cashprice="ngModel" name="cashprice" >  
+        </div>
+        <div class="input-group mb-3">
+          <label> Pharmacy Fee:</label>
+                <input  type="text"  class="form-control w-4" [(ngModel)]="user.pharmacyfee" #pharmacyfee="ngModel" name="pharmacyfee"  >
+              
+                <label>Ins Despensing Fee:</label>
+                <input  type="text"  class="form-control" [(ngModel)]="user.insdespensingfee" #insdespensingfee="ngModel" name="insdespensingfee"  >  
+        </div>
+        <div class="input-group mb-3">
+          <label> U&C:</label>
+                <input  type="text"  class="form-control w-4" [(ngModel)]="user.uc" #uc="ngModel" name="uc" >
+              
+                <label>Patient Pay:</label>
+                <input  type="text"  class="form-control" [(ngModel)]="user.patientpay" #patientpay="ngModel" name="patientpay" >  
+        </div>
+        <div class="input-group mb-3">
+          <label> Billed:</label>
+                <input  type="text"  class="form-control w-4" [(ngModel)]="user.billed" #billed="ngModel" name="billed" >
+              
+                <label>Insurenence Totel Pay:</label>
+                <input  type="text"  class="form-control" [(ngModel)]="user.insurence" #insurence="ngModel" name="insurence" >  
+        </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  
+</form>
